@@ -1,0 +1,10 @@
+.code-journal-header {
+  background-color: rgb(43, 43, 43);
+  color: white;
+}
+
+.header-text {
+  font-family: 'Luckiest Guy', cursive;
+  font-weight: 400;
+  font-size: 30px;
+}
