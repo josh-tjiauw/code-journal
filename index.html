@@ -16,11 +16,45 @@
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="code-journal-header header-text">Code Journal
-  </header>
+  <header class="header-text"><h1>Code Journal</h1></header>
   <main>
-    <div data-view="edit-profile">
-      <h1 class="header-text">Edit Profile</h1>
+    <div class="container">
+      <div class="row" data-view="edit-profile">
+        <h1 class="header-text">Edit Profile</h1>
+      </div>
+
+      <div class="row">
+        <div class="column-half">
+          <img src="images/placeholder-image-square.jpg" alt="Placeholder Image">
+        </div>
+
+        <div class="column-half">
+          <form>
+            <label for="avatar-url" class="header-text-small">Avatar URL</label><br>
+            <input type="url" id="avatar-url"><br><br><br>
+
+            <label for="username" class="header-text-small">Username</label><br>
+            <input type="text" id="username"><br><br><br>
+
+            <label for="full-name" class="header-text-small">Full Name</label><br>
+            <input type="text" id="full-name"><br><br><br>
+
+            <label for="location" class="header-text-small">Location</label><br>
+            <input type="text" id="location">
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="column-full">
+          <form>
+          <label for="bio" class="header-text-small">Bio</label><br>
+          <textarea name="bio" cols="83" rows="5"></textarea><br>
+
+          <button type="submit" class="header-text">SAVE</button>
+          </form>
+        </div>
+      </div>
     </div>
   </main>
   <script src="js/data.js"></script>
