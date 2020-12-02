@@ -30,26 +30,33 @@
         <form id="profile-form">
         <div class="row">
           <div class="column-half">
-            <img id='profile-picture' src="images/placeholder-image-square.jpg" alt="Placeholder Image">
+            <img src="images/placeholder-image-square.jpg" alt="Placeholder Image">
           </div>
 
           <div class="column-half">
-
-              <label for="avatar-url" class="header-text-small">Avatar URL</label><br>
-              <input type="url" id="avatarUrl" required><br><br><br>
-
-              <label for="username" class="header-text-small">Username</label><br>
-              <input type="text" id="username" required><br><br><br>
-
-              <label for="full-name" class="header-text-small">Full Name</label><br>
-              <input type="text" id="fullName" required><br><br><br>
-
-              <label for="location" class="header-text-small">Location</label><br>
-              <input type="text" id="location" required><br><br><br>
+            <div class='row-test'>
+              <label for="avatar-url" class="header-text-small">Avatar URL</label>
+              <input type="url" id="avatarUrl" required>
             </div>
+
+            <div class='row-test'>
+              <label for="username" class="header-text-small">Username</label>
+              <input type="text" id="username" required>
+            </div>
+
+            <div class='row-test'>
+              <label for="full-name" class="header-text-small">Full Name</label>
+              <input type="text" id="fullName" required>
+            </div>
+
+            <div class='row-test'>
+              <label for="location" class="header-text-small">Location</label>
+              <input type="text" id="location" required>
+            </div>
+          </div>
         </div>
 
-        <div class="row">
+        <div class="row-test">
           <div class="column-full">
             <label for="bio" class="header-text-small">Bio</label><br>
             <textarea id="bio" rows="5"></textarea><br>
