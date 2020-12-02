@@ -16,44 +16,50 @@
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="header-text"><h1>Code Journal</h1></header>
+  <header class="header-text">Code Journal</header>
+
   <main>
     <div class="container">
-      <div class="row" data-view="edit-profile">
-        <h1 class="header-text">Edit Profile</h1>
-      </div>
-
-      <div class="row">
-        <div class="column-half">
-          <img src="images/placeholder-image-square.jpg" alt="Placeholder Image">
+      <div data-view="edit-profile">
+        <div class="row">
+          <h1 class="header-text column-full">Edit Profile</h1>
         </div>
 
-        <div class="column-half">
-          <form>
-            <label for="avatar-url" class="header-text-small">Avatar URL</label><br>
-            <input type="url" id="avatar-url"><br><br><br>
+        <form id="profile-form">
+        <div class="row">
+          <div class="column-half">
+            <img src="images/placeholder-image-square.jpg" alt="Placeholder Image">
+          </div>
 
-            <label for="username" class="header-text-small">Username</label><br>
-            <input type="text" id="username"><br><br><br>
+          <div class="column-half">
 
-            <label for="full-name" class="header-text-small">Full Name</label><br>
-            <input type="text" id="full-name"><br><br><br>
+              <label for="avatar-url" class="header-text-small">Avatar URL</label><br>
+              <input type="url" id="avatarUrl" required><br><br><br>
 
-            <label for="location" class="header-text-small">Location</label><br>
-            <input type="text" id="location">
-          </form>
+              <label for="username" class="header-text-small">Username</label><br>
+              <input type="text" id="username" required><br><br><br>
+
+              <label for="full-name" class="header-text-small">Full Name</label><br>
+              <input type="text" id="fullName" required><br><br><br>
+
+              <label for="location" class="header-text-small">Location</label><br>
+              <input type="text" id="location" required>
+            </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="column-full">
-          <form>
-          <label for="bio" class="header-text-small">Bio</label><br>
-          <textarea name="bio" cols="83" rows="5"></textarea><br>
-
-          <button type="submit" class="header-text">SAVE</button>
-          </form>
+        <div class="row">
+          <div class="column-full">
+            <label for="bio" class="header-text-small">Bio</label><br>
+            <textarea name="bio" rows="5"></textarea><br>
+          </div>
         </div>
+
+        <div class="row" id="save-button">
+          <div class="column-full">
+            <button type="submit" class="header-text">Save</button>
+          </div>
+        </div>
+        </form>
       </div>
     </div>
   </main>

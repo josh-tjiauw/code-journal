@@ -1,15 +1,14 @@
+
 header {
   background-color: rgb(43, 43, 43);
   color: white;
-  height: 100px;
+  height: 50px;
+  width: 100%;
   font-size: 24px;
   position: relative;
 }
 
-header > h1 {
-  position: absolute;
-  left: 28%;
-}
+
 
 .column-half {
   width: 50%;
@@ -47,7 +46,6 @@ textarea:active {
   background-color: white;
 }
 
-button {
-  position: absolute;
-  right: 28.5%;
+#save-button {
+  float: right;
 }
