@@ -1,0 +1,82 @@
+
+header {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  background-color: rgb(43, 43, 43);
+}
+
+.code-journal {
+  padding: 15px;
+  margin-right: 39.5rem;
+  color: white;
+  font-size: 30px;
+}
+
+.column-half {
+  width: 50%;
+}
+
+.column-half > img {
+  width: 100%;
+}
+
+.row-test {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.row-test:nth-child(n+2){
+  margin-top: 47px;
+}
+
+.header-text {
+  font-family: 'Luckiest Guy', cursive;
+  font-weight: 400;
+}
+
+.header-text-small {
+  font-family: 'Luckiest Guy', cursive;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+input,
+textarea {
+  width: 100%;
+  font-family: 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  background-color: rgb(185, 185, 185);
+  resize: none;
+}
+
+input:hover,
+input:active,
+textarea:hover,
+textarea:active {
+  background-color: white;
+}
+
+#save-button {
+  float: right;
+}
+
+@media (max-width: 900px) {
+  .code-journal {
+    padding: 15px;
+    margin: 0;
+    color: white;
+  }
+
+  #edit-profile-text{
+    margin: 15px auto;
+  }
+  .row {
+    display: block;
+  }
+
+  .column-half {
+    width: 100%;
+  }
+}

@@ -12,12 +12,65 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
+  <header class="header-text">
+    <span class='code-journal'>Code Journal</span>
   </header>
+
   <main>
-    <div data-view="edit-profile"></div>
+    <div class="container">
+      <div data-view="edit-profile">
+        <div class="row">
+          <h1 class="header-text column-full" id='edit-profile-text'>Edit Profile</h1>
+        </div>
+
+        <form id="profile-form">
+        <div class="row">
+          <div class="column-half">
+            <img src="images/placeholder-image-square.jpg" alt="Placeholder Image">
+          </div>
+
+          <div class="column-half">
+            <div class='row-test'>
+              <label for="avatar-url" class="header-text-small">Avatar URL</label>
+              <input type="url" id="avatarUrl" required>
+            </div>
+
+            <div class='row-test'>
+              <label for="username" class="header-text-small">Username</label>
+              <input type="text" id="username" required>
+            </div>
+
+            <div class='row-test'>
+              <label for="full-name" class="header-text-small">Full Name</label>
+              <input type="text" id="fullName" required>
+            </div>
+
+            <div class='row-test'>
+              <label for="location" class="header-text-small">Location</label>
+              <input type="text" id="location" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="row-test">
+          <div class="column-full">
+            <label for="bio" class="header-text-small">Bio</label><br>
+            <textarea id="bio" rows="5"></textarea><br>
+          </div>
+        </div>
+
+        <div class="row" id="save-button">
+          <div class="column-full">
+            <button type="submit" class="header-text">Save</button>
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
