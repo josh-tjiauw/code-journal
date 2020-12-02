@@ -17,6 +17,8 @@ $form.addEventListener('submit', function(event){
   data['profile']['location'] = $location.value;
   data['profile']['avatarURL'] = $avatarUrl.value;
   data['profile']['bio'] = $bio.value;
+  $form.reset();
+  $profilePicture.src = 'images/placeholder-image-square.jpg';
 })
 
 console.log(data);
