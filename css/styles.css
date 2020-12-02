@@ -8,8 +8,6 @@ header {
   position: relative;
 }
 
-
-
 .column-half {
   width: 50%;
 }
@@ -48,4 +46,14 @@ textarea:active {
 
 #save-button {
   float: right;
+}
+
+@media (max-width: 768px) {
+  .row {
+    display: block;
+  }
+
+  .column-half {
+    width: 100%;
+  }
 }
