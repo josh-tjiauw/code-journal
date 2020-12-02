@@ -16,19 +16,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="header-text">Code Journal</header>
+  <header class="header-text">
+    <span class='code-journal'>Code Journal</span>
+  </header>
 
   <main>
     <div class="container">
       <div data-view="edit-profile">
         <div class="row">
-          <h1 class="header-text column-full">Edit Profile</h1>
+          <h1 class="header-text column-full" id='edit-profile-text'>Edit Profile</h1>
         </div>
 
         <form id="profile-form">
         <div class="row">
           <div class="column-half">
-            <img src="images/placeholder-image-square.jpg" alt="Placeholder Image">
+            <img id='profile-picture' src="images/placeholder-image-square.jpg" alt="Placeholder Image">
           </div>
 
           <div class="column-half">
@@ -43,14 +45,14 @@
               <input type="text" id="fullName" required><br><br><br>
 
               <label for="location" class="header-text-small">Location</label><br>
-              <input type="text" id="location" required>
+              <input type="text" id="location" required><br><br><br>
             </div>
         </div>
 
         <div class="row">
           <div class="column-full">
             <label for="bio" class="header-text-small">Bio</label><br>
-            <textarea name="bio" rows="5"></textarea><br>
+            <textarea id="bio" rows="5"></textarea><br>
           </div>
         </div>
 
