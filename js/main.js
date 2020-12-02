@@ -20,5 +20,3 @@ $form.addEventListener('submit', function(event){
   $form.reset();
   $profilePicture.src = 'images/placeholder-image-square.jpg';
 })
-
-console.log(data);
