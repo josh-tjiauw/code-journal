@@ -4,7 +4,19 @@ var $fullName = document.getElementById('fullName');
 var $location = document.getElementById('location');
 var $bio = document.getElementById('bio');
 var $profilePicture = document.querySelector('img');
+var $form = document.querySelector('form');
 
 $avatarUrl.addEventListener('input', function(event){
   $profilePicture.src = event.target.value;
 })
+
+$form.addEventListener('submit', function(event){
+  event.preventDefault();
+  data['profile']['username'] = $username.value;
+  data['profile']['fullName'] = $fullName.value;
+  data['profile']['location'] = $location.value;
+  data['profile']['avatarURL'] = $avatarUrl.value;
+  data['profile']['bio'] = $bio.value;
+})
+
+console.log(data);
