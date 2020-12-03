@@ -22,7 +22,7 @@ $form.addEventListener('submit', function(event){
   data['profile']['bio'] = $bio.value;
   $form.reset();
   $profilePicture.src = 'images/placeholder-image-square.jpg';
-  data['view'] = 'profile';
+  viewSwap('profile')
 })
 
 function displayData(data){
@@ -111,3 +111,9 @@ function displayData(data){
   }
 
 viewSwap('profile');
+
+document.addEventListener('DOMContentLoaded', function(event){
+  if(data['profile']['username'] == ''){
+    viewSwap('edit-profile');
+  }
+})
