@@ -21,6 +21,10 @@ header {
   width: 100%;
 }
 
+.column-inline {
+  display: flex;
+}
+
 .row-test {
   display: flex;
   flex-direction: column;
