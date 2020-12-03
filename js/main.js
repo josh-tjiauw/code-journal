@@ -7,6 +7,7 @@ var $bio = document.getElementById('bio');
 var $profilePicture = document.querySelector('img');
 var $form = document.querySelector('form');
 var $profile = document.getElementById('profile');
+var $viewNodeList = document.querySelectorAll('.view');
 
 $avatarUrl.addEventListener('input', function(event){
   $profilePicture.src = event.target.value;
@@ -85,13 +86,25 @@ function displayData(data){
 }
 displayData(data);
 $container.appendChild($profile);
-/*
-var $dataView = document.createElement('div');
-var att = document.createAttribute('data-view');
-att.value = 'profile';
-$dataView.setAttributeNode(att);
-var $displayFullName = document.getElementById('displayFullName');
-var $displayUsername = document.getElementById('displayUsername');
-var $displayLocation = document.getElementById('displayLocation');
-var $displayBio = document.getElementById('displayBio')
-var $displayProfilePicture = document.getElementById('displayProfilePicture');*/
+
+
+  var $dataViewNodeList = [];
+  for(i=0; i<$viewNodeList.length; i++){
+    var dvnode = $viewNodeList[i].getAttribute('data-view');
+    $dataViewNodeList.push(dvnode);
+  }
+  console.log($dataViewNodeList);
+
+  function viewSwap(dataview) {
+    for(i=0; i<$viewNodeList.length; i++) {
+      if(dataview !== $dataViewNodeList[i]){
+        $viewNodeList[i].className = 'view hidden';
+      }
+      else {
+        $viewNodeList[i].className = 'view';
+        data['view'] = $dataViewNodeList[i];
+      }
+    }
+  }
+
+viewSwap('profile');
