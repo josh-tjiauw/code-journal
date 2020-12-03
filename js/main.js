@@ -84,9 +84,6 @@ function displayData(data){
   $profile.appendChild($rowTwoDiv);
   return $profile;
 }
-displayData(data);
-$container.appendChild($profile);
-
 
   var $dataViewNodeList = [];
   for(i=0; i<$viewNodeList.length; i++){
@@ -104,6 +101,11 @@ $container.appendChild($profile);
         $viewNodeList[i].className = 'view';
         data['view'] = $dataViewNodeList[i];
       }
+    }
+    if (data['view'] === 'profile') {
+      $profile.innerHTML = '';
+      displayData(data);
+      $container.appendChild($profile);
     }
   }
 
