@@ -22,6 +22,7 @@ $form.addEventListener('submit', function(event){
   data['profile']['bio'] = $bio.value;
   $form.reset();
   $profilePicture.src = 'images/placeholder-image-square.jpg';
+  data['view'] = 'profile';
 })
 
 function displayData(data){
