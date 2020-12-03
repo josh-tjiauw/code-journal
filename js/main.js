@@ -26,7 +26,6 @@ $form.addEventListener('submit', function(event){
 })
 
 function displayData(data){
-  //Full Name
   var $rowOneDiv = document.createElement('div');
   $rowOneDiv.className = 'row';
   var $columnOneDiv = document.createElement('div');
@@ -35,7 +34,7 @@ function displayData(data){
   $h1FullName.className = 'reg-text';
   $h1FullName.id = 'displayFullName';
   $h1FullName.textContent = data['profile']['fullName'];
-  //Profile Picture
+
   var $rowTwoDiv = document.createElement('div');
   $rowTwoDiv.className = 'row';
   var $columnTwoDiv = document.createElement('div');
@@ -43,7 +42,7 @@ function displayData(data){
   var $displayProfilePicture = document.createElement('img')
   $displayProfilePicture.alt = 'Profile Picture';
   $displayProfilePicture.src = data['profile']['avatarUrl'];
-  //Username
+
   var $columnTwoDiv2 = document.createElement('div');
   $columnTwoDiv2.className = 'column-half';
   var $h2displayUsername = document.createElement('h2');
@@ -52,7 +51,7 @@ function displayData(data){
   var $spandisplayUsername = document.createElement('span');
   $spandisplayUsername.id = 'displayUsername'
   $spandisplayUsername.textContent = data['profile']['username'];
-  //Location
+
   var $rowForLocation = document.createElement('div');
   $rowForLocation.className = 'row';
   var $h2displayLocation = document.createElement('h2');
@@ -61,14 +60,14 @@ function displayData(data){
   var $spandisplayLocation = document.createElement('span');
   $spandisplayLocation.id = 'displayLocation'
   $spandisplayLocation.textContent = data['profile']['location'];
-  //Bio
+
   var $rowForBio = document.createElement('div');
   $rowForBio.className = 'row';
   var $pdisplayBio = document.createElement('p');
   $pdisplayBio.className = 'reg-text';
   $pdisplayBio.id = 'displayBio'
   $pdisplayBio.textContent = data['profile']['bio'];
-  //Append to doc
+
   $rowForBio.appendChild($pdisplayBio);
   $h2displayLocation.appendChild($spandisplayLocation);
   $rowForLocation.appendChild($h2displayLocation);
@@ -91,7 +90,6 @@ function displayData(data){
     var dvnode = $viewNodeList[i].getAttribute('data-view');
     $dataViewNodeList.push(dvnode);
   }
-  console.log($dataViewNodeList);
 
   function viewSwap(dataview) {
     for(i=0; i<$viewNodeList.length; i++) {
