@@ -68,6 +68,14 @@ function displayData(data){
   $pdisplayBio.id = 'displayBio'
   $pdisplayBio.textContent = data['profile']['bio'];
 
+  var $rowForButton = document.createElement('div');
+  $rowForButton.className = 'row';
+  var $editButton = document.createElement('button');
+  $editButton.setAttribute('href', '#');
+  $editButton.setAttribute('data-view', 'edit-profile');
+  $editButton.textContent = 'Edit'
+
+  $rowForButton.appendChild($editButton)
   $rowForBio.appendChild($pdisplayBio);
   $h2displayLocation.appendChild($spandisplayLocation);
   $rowForLocation.appendChild($h2displayLocation);
@@ -82,6 +90,7 @@ function displayData(data){
   $rowOneDiv.appendChild($columnOneDiv);
   $profile.appendChild($rowOneDiv);
   $profile.appendChild($rowTwoDiv);
+  $profile.appendChild($rowForButton);
   return $profile;
 }
 
@@ -116,10 +125,19 @@ function displayData(data){
     }
   }
 
-viewSwap('edit-profile');
+viewSwap('profile');
 
 document.addEventListener('DOMContentLoaded', function(event){
   if(data['profile']['username'] == ''){
     viewSwap('edit-profile');
+  }
+})
+
+document.addEventListener('click', function(event){
+  if(event.target.nodeName !== 'BUTTON'){
+    return;
+  }
+  else {
+    viewSwap(event.target.getAttribute('data-view'));
   }
 })
