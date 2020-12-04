@@ -106,9 +106,17 @@ function displayData(data){
       displayData(data);
       $container.appendChild($profile);
     }
+    else if (data['view'] === 'edit-profile') {
+      $avatarUrl.setAttribute('value', data['profile']['avatarUrl']);
+      $profilePicture.src = $avatarUrl.value;
+      $username.setAttribute('value', data['profile']['username']);
+      $fullName.setAttribute('value', data['profile']['fullName']);
+      $location.setAttribute('value', data['profile']['location']);
+      $bio.textContent = data['profile']['bio'];
+    }
   }
 
-viewSwap('profile');
+viewSwap('edit-profile');
 
 document.addEventListener('DOMContentLoaded', function(event){
   if(data['profile']['username'] == ''){
