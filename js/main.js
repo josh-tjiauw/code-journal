@@ -4,13 +4,15 @@ var $username = document.getElementById('username');
 var $fullName = document.getElementById('fullName');
 var $location = document.getElementById('location');
 var $bio = document.getElementById('bio');
-var $profilePicture = document.querySelector('img');
+var $profilePicture = document.getElementById('profilePicture');
 var $form = document.querySelector('form');
 var $profile = document.getElementById('profile');
 var $viewNodeList = document.querySelectorAll('.view');
 var $header = document.querySelector('header');
 var $entries = document.getElementById('entries');
 var $createEntry = document.getElementById('create-entry');
+var $imgUrl = document.getElementById('imgUrl');
+var $entryPicture = document.getElementById('entryPicture');
 
 $avatarUrl.addEventListener('input', function(event){
   $profilePicture.src = event.target.value;
@@ -169,3 +171,7 @@ $createEntryButton.setAttribute('data-view', 'create-entry');
 $createEntryButton.id = 'create-entry-button';
 $createEntryButton.textContent = 'NEW'
 $entries.appendChild($createEntryButton);
+
+$imgUrl.addEventListener('input', function(event){
+  $entryPicture.src = event.target.value;
+})
