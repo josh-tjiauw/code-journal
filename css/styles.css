@@ -85,7 +85,7 @@ textarea:active {
   color: rgb(43, 43, 43);
 }
 
-#profile-button {
+#profile-button, #entries-button{
   border: solid rgb(43, 43, 43);
   border-radius: 5px;
   background-color: rgb(43, 43, 43);
@@ -93,7 +93,7 @@ textarea:active {
   cursor: pointer;
 }
 
-#profile-button:hover {
+#profile-button:hover, #entries-button:hover {
   background-color: lightyellow;
   border: solid rgb(43, 43, 43);
   border-radius: 5px;

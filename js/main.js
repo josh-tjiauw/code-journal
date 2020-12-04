@@ -9,6 +9,7 @@ var $form = document.querySelector('form');
 var $profile = document.getElementById('profile');
 var $viewNodeList = document.querySelectorAll('.view');
 var $header = document.querySelector('header');
+var $entries = document.getElementById('entries');
 
 $avatarUrl.addEventListener('input', function(event){
   $profilePicture.src = event.target.value;
@@ -153,3 +154,10 @@ $profileButton.setAttribute('data-view', 'profile');
 $profileButton.id = 'profile-button';
 $profileButton.textContent = 'Profile'
 $header.appendChild($profileButton);
+
+var $entriesButton = document.createElement('button');
+$entries.setAttribute('href', '#');
+$entriesButton.setAttribute('data-view', 'entries');
+$entriesButton.id = 'entries-button';
+$entriesButton.textContent = 'Entries'
+$header.appendChild($entriesButton);
