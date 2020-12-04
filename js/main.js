@@ -10,6 +10,7 @@ var $profile = document.getElementById('profile');
 var $viewNodeList = document.querySelectorAll('.view');
 var $header = document.querySelector('header');
 var $entries = document.getElementById('entries');
+var $createEntry = document.getElementById('create-entry');
 
 $avatarUrl.addEventListener('input', function(event){
   $profilePicture.src = event.target.value;
@@ -161,3 +162,10 @@ $entriesButton.setAttribute('data-view', 'entries');
 $entriesButton.id = 'entries-button';
 $entriesButton.textContent = 'Entries'
 $header.appendChild($entriesButton);
+
+var $createEntryButton = document.createElement('button');
+$createEntryButton.setAttribute('href', '#');
+$createEntryButton.setAttribute('data-view', 'create-entry');
+$createEntryButton.id = 'create-entry-button';
+$createEntryButton.textContent = 'NEW'
+$entries.appendChild($createEntryButton);
