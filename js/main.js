@@ -16,10 +16,18 @@ var $entryPicture = document.getElementById('entryPicture');
 var $entryForm = document.getElementById('entryForm');
 var $entryTitle = document.getElementById('entryTitle');
 var $entryNotes = document.getElementById('entryNotes');
+var phImage = 'images/placeholder-image-square.jpg'
+var allImages = document.querySelectorAll('img');
+allImages.onerror = function(){this.src=phImage}
 
 $avatarUrl.addEventListener('input', function(event){
   $profilePicture.src = event.target.value;
+  if(event.target.value === ''){
+    $profilePicture.src = phImage;
+  }
 })
+
+
 
 $form.addEventListener('submit', function(event){
   event.preventDefault();
@@ -29,7 +37,6 @@ $form.addEventListener('submit', function(event){
   data['profile']['avatarUrl'] = $avatarUrl.value;
   data['profile']['bio'] = $bio.value;
   $form.reset();
-  $profilePicture.src = 'images/placeholder-image-square.jpg';
   viewSwap('profile')
 })
 
@@ -139,6 +146,7 @@ viewSwap('profile');
 document.addEventListener('DOMContentLoaded', function(event){
   if(data['profile']['username'] === ''){
     viewSwap('edit-profile');
+    $profilePicture.src = phImage;
   }
 })
 
@@ -185,6 +193,6 @@ $entryForm.addEventListener('submit', function (event) {
   newEntry['entryTitle'] = $entryTitle.value;
   newEntry['entryNotes'] = $entryNotes.value;
   $entryForm.reset();
-  $entryPicture.src = 'images/placeholder-image-square.jpg';
+  $entryPicture.src = phImage;
   viewSwap('entries');
 })
