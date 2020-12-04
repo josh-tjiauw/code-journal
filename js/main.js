@@ -8,6 +8,7 @@ var $profilePicture = document.querySelector('img');
 var $form = document.querySelector('form');
 var $profile = document.getElementById('profile');
 var $viewNodeList = document.querySelectorAll('.view');
+var $header = document.querySelector('header');
 
 $avatarUrl.addEventListener('input', function(event){
   $profilePicture.src = event.target.value;
@@ -73,6 +74,7 @@ function displayData(data){
   var $editButton = document.createElement('button');
   $editButton.setAttribute('href', '#');
   $editButton.setAttribute('data-view', 'edit-profile');
+  $editButton.id = 'edit-button';
   $editButton.textContent = 'Edit'
 
   $rowForButton.appendChild($editButton)
@@ -141,3 +143,10 @@ document.addEventListener('click', function(event){
     viewSwap(event.target.getAttribute('data-view'));
   }
 })
+
+var $profileButton = document.createElement('button');
+$profileButton.setAttribute('href', '#');
+$profileButton.setAttribute('data-view', 'profile');
+$profileButton.id = 'profile-button';
+$profileButton.textContent = 'Profile'
+$header.appendChild($profileButton);
