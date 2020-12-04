@@ -130,13 +130,16 @@ function displayData(data){
 viewSwap('profile');
 
 document.addEventListener('DOMContentLoaded', function(event){
-  if(data['profile']['username'] == ''){
+  if(data['profile']['username'] === ''){
     viewSwap('edit-profile');
   }
 })
 
 document.addEventListener('click', function(event){
   if(event.target.nodeName !== 'BUTTON'){
+    return;
+  }
+  else if(event.target.nodeName === 'BUTTON' && data['profile']['username'] === '' && data['view'] === 'edit-profile'){
     return;
   }
   else {

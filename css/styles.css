@@ -1,15 +1,13 @@
 
 header {
   display: flex;
-  justify-content: center;
   margin: auto;
   background-color: rgb(43, 43, 43);
-  position: relative;
 }
 
 .code-journal {
   padding: 15px;
-  margin-right: 40rem;
+  margin-left: 21.3rem;
   color: white;
   font-size: 30px;
 }
@@ -77,13 +75,19 @@ textarea:active {
   border-radius: 5px;
   padding: 5px 15px;
   color: white;
+  cursor: pointer;
+}
+
+#edit-button:hover {
+  background-color: lightyellow;
+  border: solid rgb(43, 43, 43);
+  border-radius: 5px;
+  color: rgb(43, 43, 43);
 }
 
 #profile-button {
-  position: absolute;
-  top: 1.5rem;
-  left: 25rem;
   border: solid rgb(43, 43, 43);
+  border-radius: 5px;
   background-color: rgb(43, 43, 43);
   color: white;
   cursor: pointer;
@@ -91,12 +95,20 @@ textarea:active {
 
 #profile-button:hover {
   background-color: lightyellow;
-  border: solid white;
-  border-radius: 10px;
+  border: solid rgb(43, 43, 43);
+  border-radius: 5px;
   color: rgb(43, 43, 43);
 }
 
 @media (max-width: 900px) {
+  header {
+  display: flex;
+  justify-content: left;
+  margin: auto;
+  background-color: rgb(43, 43, 43);
+  position: relative;
+  }
+
   .code-journal {
     padding: 15px;
     margin: 0;
@@ -112,5 +124,12 @@ textarea:active {
 
   .column-half {
     width: 100%;
+  }
+
+  #profile-button{
+  border: solid rgb(43, 43, 43);
+  border-radius: 5px;
+  background-color: rgb(43, 43, 43);
+  color: white;
   }
 }
