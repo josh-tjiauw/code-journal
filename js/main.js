@@ -13,6 +13,9 @@ var $entries = document.getElementById('entries');
 var $createEntry = document.getElementById('create-entry');
 var $imgUrl = document.getElementById('imgUrl');
 var $entryPicture = document.getElementById('entryPicture');
+var $entryForm = document.getElementById('entryForm');
+var $entryTitle = document.getElementById('entryTitle');
+var $entryNotes = document.getElementById('entryNotes');
 
 $avatarUrl.addEventListener('input', function(event){
   $profilePicture.src = event.target.value;
@@ -174,4 +177,14 @@ $entries.appendChild($createEntryButton);
 
 $imgUrl.addEventListener('input', function(event){
   $entryPicture.src = event.target.value;
+})
+
+$entryForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+  newEntry['imgUrl'] = $imgUrl.value;
+  newEntry['entryTitle'] = $entryTitle.value;
+  newEntry['entryNotes'] = $entryNotes.value;
+  $entryForm.reset();
+  $entryPicture.src = 'images/placeholder-image-square.jpg';
+  viewSwap('entries');
 })
