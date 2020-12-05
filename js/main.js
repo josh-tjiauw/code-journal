@@ -16,9 +16,11 @@ var $entryPicture = document.getElementById('entryPicture');
 var $entryForm = document.getElementById('entryForm');
 var $entryTitle = document.getElementById('entryTitle');
 var $entryNotes = document.getElementById('entryNotes');
-var phImage = 'images/placeholder-image-square.jpg'
+var phImage = 'images/placeholder-image-square.jpg';
 var allImages = document.querySelectorAll('img');
-allImages.onerror = function(){this.src=phImage}
+allImages.onerror = function(){
+  this.src = phImage
+}
 
 $avatarUrl.addEventListener('input', function(event){
   $profilePicture.src = event.target.value;
@@ -48,7 +50,7 @@ function displayData(data){
   var $h1FullName = document.createElement('h1');
   $h1FullName.className = 'reg-text';
   $h1FullName.id = 'displayFullName';
-  $h1FullName.textContent = data['profile']['fullName'];
+  $h1FullName.textContent = data.profile.fullName;
 
   var $rowTwoDiv = document.createElement('div');
   $rowTwoDiv.className = 'row';
@@ -56,7 +58,7 @@ function displayData(data){
   $columnTwoDiv.className = 'column-half';
   var $displayProfilePicture = document.createElement('img')
   $displayProfilePicture.alt = 'Profile Picture';
-  $displayProfilePicture.src = data['profile']['avatarUrl'];
+  $displayProfilePicture.src = data.profile.avatarUrl;
 
   var $columnTwoDiv2 = document.createElement('div');
   $columnTwoDiv2.className = 'column-half';
@@ -65,7 +67,7 @@ function displayData(data){
   $h2displayUsername.innerHTML = '<i class="fas fa-user"></i>&Tab;'
   var $spandisplayUsername = document.createElement('span');
   $spandisplayUsername.id = 'displayUsername'
-  $spandisplayUsername.textContent = data['profile']['username'];
+  $spandisplayUsername.textContent = data.profile.username;
 
   var $rowForLocation = document.createElement('div');
   $rowForLocation.className = 'row';
@@ -74,14 +76,14 @@ function displayData(data){
   $h2displayLocation.innerHTML = '<i class="fas fa-map-marker-alt"></i>&Tab;'
   var $spandisplayLocation = document.createElement('span');
   $spandisplayLocation.id = 'displayLocation'
-  $spandisplayLocation.textContent = data['profile']['location'];
+  $spandisplayLocation.textContent = data.profile.location;
 
   var $rowForBio = document.createElement('div');
   $rowForBio.className = 'row';
   var $pdisplayBio = document.createElement('p');
   $pdisplayBio.className = 'reg-text';
   $pdisplayBio.id = 'displayBio'
-  $pdisplayBio.textContent = data['profile']['bio'];
+  $pdisplayBio.textContent = data.profile.bio;
 
   var $rowForButton = document.createElement('div');
   $rowForButton.className = 'row';
@@ -132,19 +134,19 @@ function displayData(data){
       $container.appendChild($profile);
     }
     else if (data['view'] === 'edit-profile') {
-      $avatarUrl.setAttribute('value', data['profile']['avatarUrl']);
+      $avatarUrl.setAttribute('value', data.profile.avatarUrl);
       $profilePicture.src = $avatarUrl.value;
-      $username.setAttribute('value', data['profile']['username']);
-      $fullName.setAttribute('value', data['profile']['fullName']);
-      $location.setAttribute('value', data['profile']['location']);
-      $bio.textContent = data['profile']['bio'];
+      $username.setAttribute('value', data.profile.username);
+      $fullName.setAttribute('value', data.profile.fullName);
+      $location.setAttribute('value', data.profile.location);
+      $bio.textContent = data.profile.bio;
     }
   }
 
-viewSwap('profile');
+viewSwap('edit-profile');
 
 document.addEventListener('DOMContentLoaded', function(event){
-  if(data['profile']['username'] === ''){
+  if(data.profile.username === ''){
     viewSwap('edit-profile');
     $profilePicture.src = phImage;
   }
@@ -154,7 +156,7 @@ document.addEventListener('click', function(event){
   if(event.target.nodeName !== 'BUTTON'){
     return;
   }
-  else if(event.target.nodeName === 'BUTTON' && data['profile']['username'] === '' && data['view'] === 'edit-profile'){
+  else if(event.target.nodeName === 'BUTTON' && data.profile.username === '' && data.view === 'edit-profile'){
     return;
   }
   else {
@@ -189,10 +191,35 @@ $imgUrl.addEventListener('input', function(event){
 
 $entryForm.addEventListener('submit', function (event) {
   event.preventDefault();
-  newEntry['imgUrl'] = $imgUrl.value;
-  newEntry['entryTitle'] = $entryTitle.value;
-  newEntry['entryNotes'] = $entryNotes.value;
+  var entry = {
+    imgUrl: $imgUrl.value,
+    title: $entryTitle.value,
+    notes: $entryNotes.value
+  };
+  data.entries.push(entry);
   $entryForm.reset();
   $entryPicture.src = phImage;
   viewSwap('entries');
+})
+
+var previousDataJSON = localStorage.getItem('data');
+if (previousDataJSON !== null) {
+  data = JSON.parse(previousDataJSON);
+}
+
+window.addEventListener('beforeunload', function (event) {
+  event.preventDefault();
+  var dataJSON = JSON.stringify(data);
+  localStorage.setItem('data', dataJSON);
+})
+
+var previousEntryJSON = localStorage.getItem('entry');
+if (previousEntryJSON !== null) {
+  entry = JSON.parse(previousentryJSON);
+}
+
+window.addEventListener('beforeunload', function (event) {
+  event.preventDefault();
+  var entryJSON = JSON.stringify(entry);
+  localStorage.setItem('entry', entryJSON);
 })
