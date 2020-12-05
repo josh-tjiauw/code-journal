@@ -223,3 +223,6 @@ window.addEventListener('beforeunload', function (event) {
   var entryJSON = JSON.stringify(entry);
   localStorage.setItem('entry', entryJSON);
 })
+
+var $entriesLi = document.createElement('li');
+$entries.appendChild($entriesLi);
