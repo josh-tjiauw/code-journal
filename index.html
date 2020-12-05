@@ -24,7 +24,7 @@
 
   <main>
     <div class="container">
-      <div class ='view hidden' data-view="edit-profile">
+      <div class ='view' data-view="edit-profile">
         <div class="row">
           <h1 class="header-text column-full" id='edit-profile-text'>Edit Profile</h1>
         </div>
@@ -65,9 +65,9 @@
           </div>
         </div>
 
-        <div class="row" id="save-button">
+        <div class="row">
           <div class="column-full">
-            <button type="submit" class="header-text">Save</button>
+            <button type="submit" id="save-button" class="header-text">Save</button>
           </div>
         </div>
         </form>
@@ -75,6 +75,49 @@
 
 
       <div class='view' id='profile' data-view="profile"></div>
+      <div class='view' id='entries' data-view="entries"></div>
+      <div class='view' id='create-entry' data-view="create-entry">
+        <div class="row">
+          <div class="column-full">
+            <h1 class="header-text">New Entry</h1>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="column-half">
+            <img id='entryPicture' src="images/placeholder-image-square.jpg" alt="Placeholder Image">
+          </div>
+          <div class="column-half">
+            <form id='entryForm'>
+              <div class="row-test">
+                <label for="imgUrl" class="header-text-small">Image URL</label>
+              <input type="url" id="imgUrl" required>
+              </div>
+
+              <div class="row-test">
+                <label for="entryTitle" class="header-text-small">Entry Title</label>
+                <input type="text" id="entryTitle">
+              </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column-full">
+            <label for="entryNotes" class="header-text-small">Notes</label><br>
+            <textarea id="entryNotes" rows="5"></textarea><br>
+          </div>
+        </div>
+
+          <div class="row">
+            <div class="column-full">
+              <button type="submit" id="save-button" class="header-text">Save</button>
+            </div>
+          </div>
+        </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
     </div>
   </main>
   <script src="js/data.js"></script>

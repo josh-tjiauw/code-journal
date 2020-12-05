@@ -9,7 +9,7 @@ header {
   padding: 15px;
   margin-left: 21.3rem;
   color: white;
-  font-size: 30px;
+  font-size: 26px;
 }
 
 .column-half {
@@ -65,8 +65,21 @@ textarea:active {
   background-color: white;
 }
 
-#save-button {
+#save-button, #create-entry-button{
   float: right;
+  font-family: 'Luckiest Guy', cursive;
+  font-weight: 400;
+  font-size: 20px;
+  background-color: lightyellow;
+  border: black solid;
+  border-radius: 5px;
+}
+
+#save-button:hover, #create-entry-button:hover{
+  border: black solid;
+  border-radius: 5px;
+  background-color: rgb(43, 43, 43);
+  color: white;
 }
 
 #edit-button {
@@ -85,7 +98,7 @@ textarea:active {
   color: rgb(43, 43, 43);
 }
 
-#profile-button {
+#profile-button, #entries-button{
   border: solid rgb(43, 43, 43);
   border-radius: 5px;
   background-color: rgb(43, 43, 43);
@@ -93,7 +106,7 @@ textarea:active {
   cursor: pointer;
 }
 
-#profile-button:hover {
+#profile-button:hover, #entries-button:hover {
   background-color: lightyellow;
   border: solid rgb(43, 43, 43);
   border-radius: 5px;
