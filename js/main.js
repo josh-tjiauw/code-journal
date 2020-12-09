@@ -183,7 +183,7 @@ $createEntryButton.setAttribute('href', '#');
 $createEntryButton.setAttribute('data-view', 'create-entry');
 $createEntryButton.id = 'create-entry-button';
 $createEntryButton.textContent = 'NEW'
-$entries.appendChild($createEntryButton);
+
 
 $imgUrl.addEventListener('input', function(event){
   $entryPicture.src = event.target.value;
@@ -224,5 +224,5 @@ window.addEventListener('beforeunload', function (event) {
   localStorage.setItem('entry', entryJSON);
 })
 
-var $entriesLi = document.createElement('ul');
-$entries.appendChild($entriesLi);
+var $entriesUl = document.createElement('ul');
+//$entries.appendChild($createEntryButton);

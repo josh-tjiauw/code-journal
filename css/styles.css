@@ -1,13 +1,14 @@
 
 header {
   display: flex;
+  position: relative;
   margin: auto;
   background-color: rgb(43, 43, 43);
 }
 
 .code-journal {
   padding: 15px;
-  margin-left: 21.3rem;
+  margin-left: 33rem;
   color: white;
   font-size: 26px;
 }
@@ -65,14 +66,17 @@ textarea:active {
   background-color: white;
 }
 
-#save-button, #create-entry-button{
-  float: right;
-  font-family: 'Luckiest Guy', cursive;
-  font-weight: 400;
-  font-size: 20px;
-  background-color: lightyellow;
-  border: black solid;
-  border-radius: 5px;
+#save-button, #create-entry-button {
+    position: relative;
+    right: 0px;
+    top: 25px;
+    float: right;
+    font-family: 'Luckiest Guy', cursive;
+    font-weight: 400;
+    font-size: 20px;
+    background-color: lightyellow;
+    border: black solid;
+    border-radius: 5px;
 }
 
 #save-button:hover, #create-entry-button:hover{
@@ -123,8 +127,7 @@ textarea:active {
   }
 
   .code-journal {
-    padding: 15px;
-    margin: 0;
+    margin-left: 0.2rem;
     color: white;
   }
 
@@ -144,5 +147,11 @@ textarea:active {
   border-radius: 5px;
   background-color: rgb(43, 43, 43);
   color: white;
+  }
+
+  #create-entry-button{
+    position: absolute;
+    top: 85px;
+    right: 23px;
   }
 }
