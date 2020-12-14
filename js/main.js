@@ -225,4 +225,3 @@ window.addEventListener('beforeunload', function (event) {
 })
 
 var $entriesUl = document.createElement('ul');
-//$entries.appendChild($createEntryButton);
